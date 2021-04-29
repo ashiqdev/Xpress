@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const createReview = async (authToken, review) => {
   return axios.post(
-    'https://mern-service.herokuapp.com/api/reviews',
+    `${process.env.REACT_APP_API_URL}/reviews`,
     { review },
     {
       headers: {
@@ -13,5 +13,5 @@ export const createReview = async (authToken, review) => {
 };
 
 export const getReviews = async () => {
-  return axios.get('https://mern-service.herokuapp.com/api/reviews');
+  return axios.get(`${process.env.REACT_APP_API_URL}/reviews`);
 };

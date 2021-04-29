@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const createOrder = async (authToken, order) => {
   return axios.post(
-    'https://mern-service.herokuapp.com/api/orders',
+    `${process.env.REACT_APP_API_URL}/orders`,
     { order },
     {
       headers: {
@@ -14,7 +14,7 @@ export const createOrder = async (authToken, order) => {
 
 export const updateOrder = async (authToken, order, id) => {
   return axios.put(
-    `https://mern-service.herokuapp.com/api/orders/${id}`,
+    `${process.env.REACT_APP_API_URL}/orders/${id}`,
     { order },
     {
       headers: {
@@ -25,7 +25,7 @@ export const updateOrder = async (authToken, order, id) => {
 };
 
 export const getOrders = async (authToken) => {
-  return axios.get('https://mern-service.herokuapp.com/api/orders', {
+  return axios.get(`${process.env.REACT_APP_API_URL}/orders`, {
     headers: {
       authToken,
     },

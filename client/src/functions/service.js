@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const createService = async (authToken, service) => {
   return axios.post(
-    'https://mern-service.herokuapp.com/api/services',
+    `${process.env.REACT_APP_API_URL}/services`,
     { service },
     {
       headers: {
@@ -13,12 +13,12 @@ export const createService = async (authToken, service) => {
 };
 
 export const getServices = async () => {
-  return axios.get('https://mern-service.herokuapp.com/api/services');
+  return axios.get(`${process.env.REACT_APP_API_URL}/services`);
 };
 
 export const deleteServiceById = async (authToken, id) => {
   return axios.delete(
-    `https://mern-service.herokuapp.com/api/services/${id}`,
+    `${process.env.REACT_APP_API_URL}/services/${id}`,
     // {},
     {
       headers: {
@@ -30,7 +30,7 @@ export const deleteServiceById = async (authToken, id) => {
 
 export const getServiceById = async (authToken, id) => {
   return axios.get(
-    `https://mern-service.herokuapp.com/api/services/${id}`,
+    `${process.env.REACT_APP_API_URL}/services/${id}`,
     // {},
     {
       headers: {

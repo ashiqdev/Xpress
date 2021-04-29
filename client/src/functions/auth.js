@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const createOrUpdateUser = async (authToken) => {
   return axios.post(
-    'https://mern-service.herokuapp.com/api/users/create-or-update-user',
+    `${process.env.REACT_APP_API_URL}/users/create-or-update-user`,
     {},
     {
       headers: {
@@ -14,7 +14,7 @@ export const createOrUpdateUser = async (authToken) => {
 
 export const currentUser = async (authToken) => {
   return axios.post(
-    'https://mern-service.herokuapp.com/api/users/current-user',
+    `${process.env.REACT_APP_API_URL}/users/current-user`,
     {},
     {
       headers: {
@@ -26,7 +26,7 @@ export const currentUser = async (authToken) => {
 
 export const currentAdmin = async (authToken) => {
   return axios.post(
-    'https://mern-service.herokuapp.com/api/users/current-admin',
+    `${process.env.REACT_APP_API_URL}/users/current-admin`,
     {},
     {
       headers: { authToken },
@@ -38,7 +38,7 @@ export const makeAdmin = async (authToken, email) => {
   let res;
   try {
     res = await axios.put(
-      'https://mern-service.herokuapp.com/api/users/make-admin',
+      `${process.env.REACT_APP_API_URL}/users/make-admin`,
       { email },
       { headers: { authToken } }
     );
