@@ -10,7 +10,7 @@ An isp based web app where you can order your favourite package!
 
 ✨ _Loved the project? Give this project a star to show your support._ ✨
 
-<img src="./src/images/screenshot.png" style="width: 80%"/>
+<img src=".client/src/images/screenshot.png" style="width: 80%"/>
    
 </div>
 
